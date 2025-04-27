@@ -11,6 +11,7 @@ let win=0;
 let isOn=false;
 tar.addEventListener('change',function(){
     win=parseInt(this.value);
+    resetAll();
 })
 p1.addEventListener('click',function(){
     if(!isOn){
@@ -34,13 +35,25 @@ p2.addEventListener('click',function(){
         p1display.style.color="red";
     }
 })
-reset.addEventListener('click',function(){
-   scr1=0;
-   scr2=0;
-   p1display.textContent=scr1;
-   p2display.textContent=scr2;
-   tar.value=1;
-   isOn=false;
-   p2display.style.color="black";
-   p1display.style.color="black";
-})
+reset.addEventListener('click',resetAll);
+function resetAll(){
+    scr1=0;
+    scr2=0;
+    p1display.textContent=scr1;
+    p2display.textContent=scr2;
+    // tar.value=1;
+    isOn=false;
+    p2display.style.color="black";
+    p1display.style.color="black";
+ }
+//  Alternative part
+//  reset.addEventListener('click',function(){
+//     scr1=0;
+//     scr2=0;
+//     p1display.textContent=scr1;
+//     p2display.textContent=scr2;
+//     tar.value=1;
+//     isOn=false;
+//     p2display.style.color="black";
+//     p1display.style.color="black";
+//  });
